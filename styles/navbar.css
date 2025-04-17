@@ -548,6 +548,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    box-sizing: border-box;
   }
   
   .contact-form input,
@@ -583,6 +587,9 @@ body {
     .contact-section h2 {
       font-size: 1.8rem;
     }
+    iframe {
+        width: 100%;
+      }
   }
 
     /* footer */
