@@ -78,7 +78,7 @@ body {
       position: absolute;
       top: 60px;
       right: 10px;
-      background-color: #111;
+      background-color: #2A4899;
       flex-direction: column;
       width: 200px;
       padding: 1rem;
@@ -87,6 +87,10 @@ body {
   
     .nav-links ul.active {
       display: flex;
+    }
+
+    .nav-links ul li a {
+        color: #95c11f;
     }
   
     .hamburguer {
