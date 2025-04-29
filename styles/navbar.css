@@ -53,7 +53,7 @@ body {
   }
   
   .nav-links ul li a:hover {
-    color: #00d4ff;
+    color: #0056b3;
   }
   
   .hamburguer {
@@ -78,9 +78,9 @@ body {
       position: absolute;
       top: 60px;
       right: 10px;
-      background-color: #2A4899;
+      background-color: white;
       flex-direction: column;
-      width: 200px;
+      width: 100px;
       padding: 1rem;
       border-radius: 8px;
     }
@@ -104,9 +104,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 100px 20px 60px;
+    padding: 10px 20px 80px;
     background: linear-gradient(135deg, #0f0844, #2A4899);
     flex-wrap: wrap;
+    height: 100vh;
+    clip-path: ellipse(100% 85% at 50% 0%);
   }
   
   .hero-left, .hero-right {
@@ -155,7 +157,8 @@ body {
   }
   
   .hero-left p {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-size: larger;
     color: white;
     margin-bottom: 1.5rem;
     max-width: 400px;
@@ -190,19 +193,20 @@ body {
   
   .btn.secondary {
     border: 4rem;
-    background-color: transparent;
-    color: white;
-    border: white;
+    background-color: white;
+    color: #008D36;
+    border: #008D36;
   }
   
   .btn.secondary:hover {
-    background-color: #cacaca;
+    background-color: #95c11f;
   }
   
   @media (max-width: 768px) {
     .hero {
       flex-direction: column;
       text-align: center;
+      height: 600px;
     }
   
     .hero-left h1 {
@@ -220,10 +224,11 @@ body {
     .floating-logo {
       width: 120px;
     }
+
   }
 /* Seção Nossos Serviços */
 .services-section {
-    padding: 80px 20px;
+    padding: 20px 20px;
     background-color: #fff;
     text-align: center;
   }
@@ -363,6 +368,8 @@ body {
     font-size: 0.95rem;
     color: #555;
     line-height: 1.6;
+    text-align: justify;
+
   }
   
   @media (max-width: 768px) {
@@ -598,7 +605,7 @@ body {
 
     /* footer */
     .footer {
-        background-color: #008D36;
+        background-color: #0056b3;
         color: #fff;
         padding: 5px 5px 5px 5px;
         text-align: center;
@@ -609,29 +616,107 @@ body {
         font-size: 0.95rem;
       }
       
-   /*Whatsapp flutuante*/
+   /*whatsapp flutuante*/
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s infinite;
+  transition: transform 0.3s ease;
+}
 
-   .whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 25px;
-    right: 25px;
-    background-color: #25D366;
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 100;
-    display: flex;
-    justify-content: center;
+.whatsapp-float img {
+  width: 28px;
+  height: 28px;
+  filter: invert(1);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+  /*footer*/
+
+.footer-master {
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  gap: 30px;
+}
+
+.footer-coluna {
+  flex: 1;
+  min-width: 250px;
+}
+
+.logo-footer {
+  width: 250px;
+  height: auto;
+}
+
+.footer-coluna h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: #0056b3;
+}
+
+.footer-coluna p, .footer-coluna li {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.footer-servicos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-servicos li::before {
+  content: "• ";
+  color: #0056b3;
+}
+
+.atendimento {
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
     align-items: center;
-    transition: transform 0.3s ease;
+    text-align: center;
   }
-  
-  .whatsapp-float:hover {
-    transform: scale(1.1);
-    background-color: #20c05c;
+
+  .footer-coluna {
+    max-width: 90%;
   }
-  
+
+  .footer-servicos {
+    columns: 2;
+  }
+}
